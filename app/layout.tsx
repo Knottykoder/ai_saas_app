@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <ClerkProvider appearance={{
       variables:{colorPrimary:'#624cf5'}
-    }}>
+    }} afterSignOutUrl='/' >
     <html lang="en">
       <body className={cn("font-IBMPlex antialiased", IBMPlex.variable)}>
         {children}
