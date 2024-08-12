@@ -2,7 +2,7 @@ import { Mongoose } from "mongoose";
 
 const mongoose = require("mongoose");
 
-const MONGODB_URL = process.env.MONGODB_URL;
+const MONGODB_URL = process.env.NEXT_PUBLIC_MONOGODB_URL;
 
 interface MongooseConnection {
   conn: Mongoose | null;
@@ -25,7 +25,8 @@ export const connToDB = async () => {
 
   cached.promise =
     cached.promise ||
-    mongoose.connect(MONGODB_URL, { dbName: "ai_saas", bufferCommands: false });
+    mongoose.connect(MONGODB_URL, { dbName: "ai_saas", bufferCommands: false,useNewUrlParser: true,
+      useUnifiedTopology: true});
 
     cached.conn = await cached.promise
     return cached.conn
