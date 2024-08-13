@@ -8,6 +8,7 @@ export interface IImage extends Document {
     width?: number;
     height?: number;
     config?: object; 
+    _id: string;
     transformationUrl?: string; 
     aspectRatio?: string;
     color?: string;
@@ -35,8 +36,8 @@ const ImageScehma = new Schema({
         type: String,
         required:true
     },
-    secureUrl:{
-        type:URL,
+    secureURL:{
+        type:String,
         required:true
     },
     width:Number,
@@ -45,7 +46,7 @@ const ImageScehma = new Schema({
         type:Object
     },
     transformationUrl:{
-        type:URL
+        type:String
     },
     aspectRatio: String,
     color:String,
